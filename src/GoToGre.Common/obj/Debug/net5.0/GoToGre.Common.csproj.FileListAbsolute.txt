@@ -1,0 +1,12 @@
+C:\code\SWE20001-Group2lab08\src\GoToGre.Common\obj\Debug\net5.0\GoToGre.Common.csproj.AssemblyReference.cache
+C:\code\SWE20001-Group2lab08\src\GoToGre.Common\obj\Debug\net5.0\GoToGre.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\SWE20001-Group2lab08\src\GoToGre.Common\obj\Debug\net5.0\GoToGre.Common.AssemblyInfoInputs.cache
+C:\code\SWE20001-Group2lab08\src\GoToGre.Common\obj\Debug\net5.0\GoToGre.Common.AssemblyInfo.cs
+C:\code\SWE20001-Group2lab08\src\GoToGre.Common\obj\Debug\net5.0\GoToGre.Common.csproj.CoreCompileInputs.cache
+C:\code\SWE20001-Group2lab08\src\GoToGre.Common\bin\Debug\net5.0\GoToGre.Common.deps.json
+C:\code\SWE20001-Group2lab08\src\GoToGre.Common\bin\Debug\net5.0\GoToGre.Common.dll
+C:\code\SWE20001-Group2lab08\src\GoToGre.Common\bin\Debug\net5.0\ref\GoToGre.Common.dll
+C:\code\SWE20001-Group2lab08\src\GoToGre.Common\bin\Debug\net5.0\GoToGre.Common.pdb
+C:\code\SWE20001-Group2lab08\src\GoToGre.Common\obj\Debug\net5.0\GoToGre.Common.dll
+C:\code\SWE20001-Group2lab08\src\GoToGre.Common\obj\Debug\net5.0\ref\GoToGre.Common.dll
+C:\code\SWE20001-Group2lab08\src\GoToGre.Common\obj\Debug\net5.0\GoToGre.Common.pdb

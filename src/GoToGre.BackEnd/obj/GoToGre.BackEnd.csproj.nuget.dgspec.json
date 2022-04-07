@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dr. Fida Hussain\\OneDrive\\Desktop\\Managing Software Projects\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj": {}
+    "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dr. Fida Hussain\\OneDrive\\Desktop\\Managing Software Projects\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj": {
+    "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dr. Fida Hussain\\OneDrive\\Desktop\\Managing Software Projects\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj",
+        "projectUniqueName": "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj",
         "projectName": "GoToGre.BackEnd",
-        "projectPath": "C:\\Users\\Dr. Fida Hussain\\OneDrive\\Desktop\\Managing Software Projects\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj",
-        "packagesPath": "C:\\Users\\Dr. Fida Hussain\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dr. Fida Hussain\\OneDrive\\Desktop\\Managing Software Projects\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\obj\\",
+        "projectPath": "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj",
+        "packagesPath": "C:\\Users\\kheng\\.nuget\\packages\\",
+        "outputPath": "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dr. Fida Hussain\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kheng\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Dr. Fida Hussain\\OneDrive\\Desktop\\Managing Software Projects\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj": {
-                "projectPath": "C:\\Users\\Dr. Fida Hussain\\OneDrive\\Desktop\\Managing Software Projects\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj"
+              "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj": {
+                "projectPath": "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj"
               }
             }
           }
@@ -71,17 +71,17 @@
         }
       }
     },
-    "C:\\Users\\Dr. Fida Hussain\\OneDrive\\Desktop\\Managing Software Projects\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj": {
+    "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dr. Fida Hussain\\OneDrive\\Desktop\\Managing Software Projects\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj",
+        "projectUniqueName": "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj",
         "projectName": "GoToGre.Common",
-        "projectPath": "C:\\Users\\Dr. Fida Hussain\\OneDrive\\Desktop\\Managing Software Projects\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj",
-        "packagesPath": "C:\\Users\\Dr. Fida Hussain\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dr. Fida Hussain\\OneDrive\\Desktop\\Managing Software Projects\\SWE20001-Group2lab08\\src\\GoToGre.Common\\obj\\",
+        "projectPath": "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj",
+        "packagesPath": "C:\\Users\\kheng\\.nuget\\packages\\",
+        "outputPath": "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dr. Fida Hussain\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kheng\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

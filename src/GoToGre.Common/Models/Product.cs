@@ -19,7 +19,9 @@ namespace GoToGre.Common.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string ImageURL { get; set; }
+        public string ProductType { get; set; }
         public int StockAmmount { get; set; }
+        public int TargetStock { get; set; }
         public double GlobalPrice { get; set; }
 
         

@@ -19,6 +19,6 @@ namespace GoToGre.Common.Models
         public List<SaleItem> SaleItems { get; set; }
         public Members Customer { get; set; }
         public DateTime TimeStamp { get; set; }
-        
+        public double TotalPrice { get; set; }
     }
 }

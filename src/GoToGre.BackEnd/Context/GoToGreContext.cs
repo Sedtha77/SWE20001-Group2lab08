@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using GoToGre.Common.Models;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+namespace GoToGre.BackEnd.Context
+{
+    public class GoToGreContext : DbContext
+    {
+        private readonly string _dbString;
+        public GoToGreContext()
+        {
+            _dbString = $"Host=vm.lance3092.me;Username=usr;Password=pwd1234;Database=gotogre";
+        }
+        public GoToGreContext(string hostName,string username,string password,string databasename)
+        {
+            _dbString = $"Host={hostName};Username={username};Password={password};Database={databasename}";
+
+        }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<SaleItem> SaleItems { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            => optionsBuilder.UseNpgsql(@"Host=myserver;Username=mylogin;Password=mypass;Database=mydatabase");
+    }
+}

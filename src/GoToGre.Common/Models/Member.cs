@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace GoToGre.Common.Models
 {
-    public class Members
+    public class Member
     {
-        public Members() { }
-        public Members(int id =0, string name = "", int points = 0 ,string imageURL = "")
+        public Member() { }
+        public Member(int id =0, string name = "", int points = 0 ,string imageURL = "")
         {
             Id = id;
             Name = name;
@@ -19,6 +19,7 @@ namespace GoToGre.Common.Models
         }
         public int Id { get; set; } 
         public string Name { get; set; }
+        public DateTime DateOfBirtch { get; set; }
         public string ImageURL { get; set; }
         public int Points { get; set; }
         public List<Sale> Sales { get; set; }

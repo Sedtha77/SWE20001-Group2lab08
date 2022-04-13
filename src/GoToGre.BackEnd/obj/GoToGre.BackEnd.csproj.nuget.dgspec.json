@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mikke\\OneDrive\\Documents\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj": {}
+    "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mikke\\OneDrive\\Documents\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj": {
+    "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mikke\\OneDrive\\Documents\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj",
         "projectName": "GoToGre.BackEnd",
-        "projectPath": "C:\\Users\\mikke\\OneDrive\\Documents\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj",
-        "packagesPath": "C:\\Users\\mikke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mikke\\OneDrive\\Documents\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\obj\\",
+        "projectPath": "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\GoToGre.BackEnd.csproj",
+        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mikke\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mikke\\OneDrive\\Documents\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj": {
-                "projectPath": "C:\\Users\\mikke\\OneDrive\\Documents\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj"
+              "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj": {
+                "projectPath": "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj"
               }
             }
           }
@@ -67,21 +67,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\mikke\\OneDrive\\Documents\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj": {
+    "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mikke\\OneDrive\\Documents\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj",
         "projectName": "GoToGre.Common",
-        "projectPath": "C:\\Users\\mikke\\OneDrive\\Documents\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj",
-        "packagesPath": "C:\\Users\\mikke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mikke\\OneDrive\\Documents\\SWE20001-Group2lab08\\src\\GoToGre.Common\\obj\\",
+        "projectPath": "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj",
+        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mikke\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -121,7 +121,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     }

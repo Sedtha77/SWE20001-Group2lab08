@@ -66,3 +66,5 @@ C:\DesignManagment1\SWE20001-Group2lab08\src\GoToGre.BackEnd\obj\Debug\net5.0\sc
 C:\DesignManagment1\SWE20001-Group2lab08\src\GoToGre.BackEnd\obj\Debug\net5.0\GoToGre.BackEnd.RazorTargetAssemblyInfo.cache
 C:\DesignManagment1\SWE20001-Group2lab08\src\GoToGre.BackEnd\obj\Debug\net5.0\GoToGre.BackEnd.csproj.CopyComplete
 C:\DesignManagment1\SWE20001-Group2lab08\src\GoToGre.BackEnd\obj\Debug\net5.0\GoToGre.BackEnd.genruntimeconfig.cache
+C:\DesignManagment1\SWE20001-Group2lab08\src\GoToGre.BackEnd\bin\Debug\net5.0\Humanizer.dll
+C:\DesignManagment1\SWE20001-Group2lab08\src\GoToGre.BackEnd\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll

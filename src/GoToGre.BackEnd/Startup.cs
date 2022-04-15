@@ -11,7 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using GoToGre.BackEnd.Repos;
+using GoToGre.BackEnd.Context;
 namespace GoToGre.BackEnd
 {
     public class Startup
@@ -28,6 +29,10 @@ namespace GoToGre.BackEnd
         {
 
             services.AddControllers();
+            GoToGreContext goToGreContext = new GoToGreContext();
+            services.AddSingleton(goToGreContext);
+            GoToGreRepo repo = new GoToGreRepo(goToGreContext);
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GoToGre.BackEnd", Version = "v1" });

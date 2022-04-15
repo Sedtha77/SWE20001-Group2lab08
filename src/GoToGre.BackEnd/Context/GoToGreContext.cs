@@ -25,5 +25,13 @@ namespace GoToGre.BackEnd.Context
         public DbSet<SaleItem> SaleItems { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseNpgsql(@"Host=myserver;Username=mylogin;Password=mypass;Database=mydatabase");
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Sale>()
+                .HasOne(s => s.Customer)
+                .WithMany(m => m.Sales);
+            modelBuilder.Entity<SaleItem>().HasOne(s => s.Sale).WithMany(s => s.SaleItems);
+            modelBuilder.Entity<SaleItem>().HasOne(s => s.Product);
+        }
     }
 }

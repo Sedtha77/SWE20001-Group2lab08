@@ -11,38 +11,38 @@ namespace GoToGre.BackEnd.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MembersController : ControllerBase
+    public class MemberController : ControllerBase
     {
-        // GET: api/<MembersController>
+        // GET: api/<MemberController>
         [HttpGet]
-        public IEnumerable<Members> Get()
+        public IEnumerable<Member> Get()
         {
-            List<Members> memberList = new List<Members>();
+            List<Member> memberList = new List<Member>();
             
             return memberList;
         }
 
-        // GET api/<MembersController>/5
+        // GET api/<MemberController>/5
         [HttpGet("{id}")]
-        public Members Get(int id)
+        public Member Get(int id)
         {
-            Members member = new Members();
+            Member member = new Member();
             return member;
         }
 
-        // POST api/<MembersController>
+        // POST api/<MemberController>
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<MembersController>/5
+        // PUT api/<MemberController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Members member)
+        public void Put(int id, [FromBody] Member member)
         {
         }
 
-        // DELETE api/<MembersController>/5
+        // DELETE api/<MemberController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

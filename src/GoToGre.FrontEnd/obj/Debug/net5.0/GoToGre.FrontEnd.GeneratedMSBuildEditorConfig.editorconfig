@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = GoToGre.FrontEnd
-build_property.ProjectDir = C:\code\SWE20001-Group2lab08\src\GoToGre.FrontEnd\
+build_property.ProjectDir = C:\DesignManagment1\SWE20001-Group2lab08\src\GoToGre.FrontEnd\

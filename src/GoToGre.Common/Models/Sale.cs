@@ -12,12 +12,12 @@ namespace GoToGre.Common.Models
         {
             Id = id;
             SaleItems = new List<SaleItem>();
-            Customer = new Members();
+            Customer = new Member();
             TimeStamp = DateTime.Now;
         }
         public int Id;
         public List<SaleItem> SaleItems { get; set; }
-        public Members Customer { get; set; }
+        public Member Customer { get; set; }
         public DateTime TimeStamp { get; set; }
         public double TotalPrice { get; set; }
     }

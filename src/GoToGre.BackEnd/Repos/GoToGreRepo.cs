@@ -13,24 +13,24 @@ namespace GoToGre.BackEnd.Repos
         {
             _goToGreContext = goToGreContext;
         }
-        public List<Member> getAllMembers()
+        public List<Member> getAllMember()
         {
-            return _goToGreContext.Members.AsEnumerable().ToList();
+            return _goToGreContext.Member.AsEnumerable().ToList();
         }
         public Member GetMember(int id)
         {
-            return _goToGreContext.Members.Where(m => m.Id == id).FirstOrDefault();
+            return _goToGreContext.Member.Where(m => m.Id == id).FirstOrDefault();
         }
         public void AddMember(Member member)
         {
-            _goToGreContext.Members.Add(member);
+            _goToGreContext.Member.Add(member);
             _goToGreContext.SaveChanges();
         }
         public bool DeleteMember(Member member)
         {
             _goToGreContext.Remove(member);
             _goToGreContext.SaveChanges();
-            Member deleted = _goToGreContext.Members.Where(x => x.Id == member.Id).FirstOrDefault();
+            Member deleted = _goToGreContext.Member.Where(x => x.Id == member.Id).FirstOrDefault();
             return (deleted == default);
         }
         

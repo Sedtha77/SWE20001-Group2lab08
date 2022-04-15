@@ -8,20 +8,28 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Lance\\.nuget\\packages\\": {}
+    "C:\\Users\\lance\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\code\\SWE20001-Group2lab08\\src\\GoToGre.FrontEnd\\GoToGre.FrontEnd.csproj",
+      "projectUniqueName": "C:\\DesignManagment1\\SWE20001-Group2lab08\\src\\GoToGre.FrontEnd\\GoToGre.FrontEnd.csproj",
       "projectName": "GoToGre.FrontEnd",
-      "projectPath": "C:\\code\\SWE20001-Group2lab08\\src\\GoToGre.FrontEnd\\GoToGre.FrontEnd.csproj",
-      "packagesPath": "C:\\Users\\Lance\\.nuget\\packages\\",
-      "outputPath": "C:\\code\\SWE20001-Group2lab08\\src\\GoToGre.FrontEnd\\obj\\",
+      "projectPath": "C:\\DesignManagment1\\SWE20001-Group2lab08\\src\\GoToGre.FrontEnd\\GoToGre.FrontEnd.csproj",
+      "packagesPath": "C:\\Users\\lance\\.nuget\\packages\\",
+      "outputPath": "C:\\DesignManagment1\\SWE20001-Group2lab08\\src\\GoToGre.FrontEnd\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Lance\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\lance\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

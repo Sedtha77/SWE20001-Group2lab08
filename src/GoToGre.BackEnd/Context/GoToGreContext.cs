@@ -19,7 +19,7 @@ namespace GoToGre.BackEnd.Context
             _dbString = $"Host={hostName};Username={username};Password={password};Database={databasename}";
 
         }
-        public DbSet<Member> Members { get; set; }
+        public DbSet<Member> Member { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<SaleItem> SaleItems { get; set; }

@@ -22,8 +22,24 @@ namespace GoToGre.FrontEnd.Controllers
         {
             return View();
         }
+        public IActionResult About()
+        {
+            return View();
+        }
 
-        public IActionResult Privacy()
+        public IActionResult Store()
+        {
+            return View();
+        }
+        public IActionResult Blog()
+        {
+            return View();
+        }
+        public IActionResult News()
+        {
+            return View();
+        }
+        public IActionResult Contact()
         {
             return View();
         }

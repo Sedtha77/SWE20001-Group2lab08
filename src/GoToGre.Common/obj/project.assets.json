@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\kheng\\.nuget\\packages\\": {}
+    "C:\\Users\\Student\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj",
+      "projectUniqueName": "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj",
       "projectName": "GoToGre.Common",
-      "projectPath": "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj",
-      "packagesPath": "C:\\Users\\kheng\\.nuget\\packages\\",
-      "outputPath": "D:\\A.Education\\School project\\Swinburne\\2022\\semester 1\\SWE20001\\SWE20001-Group2lab08\\src\\GoToGre.Common\\obj\\",
+      "projectPath": "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.Common\\GoToGre.Common.csproj",
+      "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Student\\Documents\\GitHub\\SWE20001-Group2lab08\\src\\GoToGre.Common\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kheng\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
       }
     }
   }

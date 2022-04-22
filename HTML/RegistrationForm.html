@@ -5,7 +5,37 @@
     <meta name ="description" content="GoToGre Registration form" />
     <meta name ="keywords" 	  content="HTML" />
     <meta name ="author"      content="Sedtha Group 2" />
-	<title>GoToGre</title>
+	<title>Member Registration</title>
 </head>
 <body>
    <img src ="logo.png" alt ="GoToGre logo" />
+   <h1>Welcome</h1>
+      <h2>GoToGre Admin</h2>
+	<form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+	  <fieldset>
+		<p><label for="photo">photo: </label> 
+			<input type="img" name= "photo" id="photo" required="required"/>
+		</p>
+		<p><label for="name">Name :</label> 
+			<input type="text" name= "name" id="name" maxlength="10" size="10" required="required"/>
+		</p>
+		<p><label for="PhoneNumber">Phone Number :</label> 
+			<input type="number" name= "PhoneNumber" id="PhoneNumber" maxlength="10" size="10" required="required"/>
+		</p>
+		<p><label for="Email">Email Address :</label> 
+			<input type="text" name= "Email" id="Email" required="required"/>
+		</p>
+		<p><label for="spw">Password :</label> 
+			<input type="text" name= "spw" id="spw" maxlength="10" size="10" required="required"/>
+		</p>
+		<p><label for="cpw">Confirm Password :</label> 
+			<input type="text" name= "cpw" id="cpw" maxlength="10" size="10" required="required"/>
+		</p>		
+   		
+     </fieldset>
+
+	<input type= "sign up" value="sign up"/>
+	<input type= "Signin" value="Sign in"/>
+	</form>
+</body>
+</html> 

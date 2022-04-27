@@ -16,7 +16,7 @@ namespace GoToGre.Common.Models
             Name = name;
             Points = points;
             ImageURL = imageURL;
-            Sales = new List<Sale>();
+            //Sales = new List<Sale>();
         }
         [Key]
         public int Id { get; set; } 
@@ -24,6 +24,6 @@ namespace GoToGre.Common.Models
         public DateTime DateOfBirtch { get; set; }
         public string ImageURL { get; set; }
         public int Points { get; set; }
-        public List<Sale> Sales { get; set; }
+        //public List<Sale> Sales { get; set; }
     }
 }

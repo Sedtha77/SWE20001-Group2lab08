@@ -32,14 +32,18 @@ namespace GoToGre.BackEnd.Controllers
 
         // POST api/<MemberController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public Members Post([FromBody] Members value)
         {
+            Members member = new Members();
+            return member;
+
         }
 
         // PUT api/<MemberController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Member member)
+        public Members Put(int id, [FromBody] Members member)
         {
+            return new Members();
         }
 
         // DELETE api/<MemberController>/5

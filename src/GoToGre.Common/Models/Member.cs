@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace GoToGre.Common.Models
 {
@@ -24,6 +25,7 @@ namespace GoToGre.Common.Models
         public DateTime DateOfBirtch { get; set; }
         public string ImageURL { get; set; }
         public int Points { get; set; }
+        [JsonIgnore]
         public List<Sale> Sales { get; set; }
     }
 }

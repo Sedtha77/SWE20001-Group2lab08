@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GoToGre.Common.Models;
-
+using GoToGre.BackEnd.Repos;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace GoToGre.BackEnd.Controllers
@@ -13,29 +13,31 @@ namespace GoToGre.BackEnd.Controllers
     [ApiController]
     public class MemberController : ControllerBase
     {
+        private readonly GoToGreRepo _repo;
+        public MemberController(GoToGreRepo goToGreRepo)
+        {
+            _repo = goToGreRepo;
+        }
         // GET: api/<MemberController>
         [HttpGet]
         public async Task<IEnumerable<Member>>Get()
         {
-            List<Member> memberList = new List<Member>();
-            return memberList;
+            var memberList = _repo.getAllMember();
+            return memberList ;
         }
 
         // GET api/<MemberController>/5
         [HttpGet("{id}")]
         public Member Get(int id)
         {
-            Member member = new Member();
-            return member;
+            return _repo.GetMember(id);
         }
 
         // POST api/<MemberController>
         [HttpPost]
         public Member Post([FromBody] Member value)
         {
-            Member member = new Member();
-            return member;
-
+            return _repo.AddMember(value);
         }
 
         // PUT api/<MemberController>/5
@@ -47,8 +49,10 @@ namespace GoToGre.BackEnd.Controllers
 
         // DELETE api/<MemberController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
+            Member toDelete = _repo.GetMember(id);
+            return _repo.DeleteMember(toDelete);
         }
     }
 }

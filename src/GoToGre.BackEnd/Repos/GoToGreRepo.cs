@@ -21,10 +21,11 @@ namespace GoToGre.BackEnd.Repos
         {
             return _goToGreContext.Member.Where(m => m.Id == id).FirstOrDefault();
         }
-        public void AddMember(Member member)
+        public Member AddMember(Member member)
         {
-            _goToGreContext.Member.Add(member);
+            Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<Member> test =  _goToGreContext.Member.Add(member);
             _goToGreContext.SaveChanges();
+            return member;
         }
         public bool DeleteMember(Member member)
         {

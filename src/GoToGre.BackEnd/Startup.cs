@@ -35,6 +35,7 @@ namespace GoToGre.BackEnd
             services.AddControllers();
             services.AddEntityFrameworkNpgsql().AddDbContext<GoToGreContext>(opt =>
             opt.UseNpgsql("Host=vm.lance3092.me;Username=usr;Password=pwd1234;Database=gotogre"));
+            services.AddScoped<GoToGreRepo>();
             //services.AddSingleton(goToGreContext);
             //services.AddDbContext<GoToGreContext>();
    

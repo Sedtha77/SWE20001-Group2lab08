@@ -34,6 +34,32 @@ namespace GoToGre.BackEnd.Repos
             Member deleted = _goToGreContext.Member.Where(x => x.Id == member.Id).FirstOrDefault();
             return (deleted == default);
         }
-        
+        /*
+        public List<Procut> getAllMember()
+        {
+            return _goToGreContext.Member.AsEnumerable().ToList();
+        }
+        */
+        public Product GetProductByID(int id)
+        {
+            return _goToGreContext.Products.Where(m => m.Id == id).FirstOrDefault();
+        }
+        public List<Product> GetProductsByType(string productType)
+        {
+            return _goToGreContext.Products.Where(m => m.ProductType == productType).ToList();
+        }
+        public Product AddProduct(Product product)
+        {
+            Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<Product> test = _goToGreContext.Products.Add(product);
+            _goToGreContext.SaveChanges();
+            return product;
+        }
+        public bool DeleteProduct(Product product)
+        {
+            _goToGreContext.Remove(product);
+            _goToGreContext.SaveChanges();
+            Product deleted = _goToGreContext.Products.Where(x => x.Id == product.Id).FirstOrDefault();
+            return (deleted == default);
+        }
     }
 }

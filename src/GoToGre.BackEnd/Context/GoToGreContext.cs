@@ -28,8 +28,8 @@ namespace GoToGre.BackEnd.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Sale>()
-                .HasOne(s => s.Customer)
-                .WithMany(m => m.Sales);
+                .HasOne(s => s.Customer);
+                //.WithMany(m => m.Sales);
             modelBuilder.Entity<SaleItem>().HasOne(s => s.Sale).WithMany(s => s.SaleItems);
             modelBuilder.Entity<SaleItem>().HasOne(s => s.Product);
         }

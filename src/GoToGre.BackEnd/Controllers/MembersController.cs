@@ -15,10 +15,9 @@ namespace GoToGre.BackEnd.Controllers
     {
         // GET: api/<MemberController>
         [HttpGet]
-        public IEnumerable<Member> Get()
+        public async Task<IEnumerable<Member>>Get()
         {
             List<Member> memberList = new List<Member>();
-            
             return memberList;
         }
 
@@ -32,18 +31,18 @@ namespace GoToGre.BackEnd.Controllers
 
         // POST api/<MemberController>
         [HttpPost]
-        public Members Post([FromBody] Members value)
+        public Member Post([FromBody] Member value)
         {
-            Members member = new Members();
+            Member member = new Member();
             return member;
 
         }
 
         // PUT api/<MemberController>/5
         [HttpPut("{id}")]
-        public Members Put(int id, [FromBody] Members member)
+        public Member Put(int id, [FromBody] Member member)
         {
-            return new Members();
+            return new Member();
         }
 
         // DELETE api/<MemberController>/5

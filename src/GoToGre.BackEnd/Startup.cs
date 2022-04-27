@@ -11,6 +11,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GoToGre.BackEnd.Repos;
+using GoToGre.BackEnd.Context;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+using Microsoft.EntityFrameworkCore;
 
 namespace GoToGre.BackEnd
 {
@@ -28,6 +33,15 @@ namespace GoToGre.BackEnd
         {
 
             services.AddControllers();
+            services.AddEntityFrameworkNpgsql().AddDbContext<GoToGreContext>(opt =>
+            opt.UseNpgsql("Host=vm.lance3092.me;Username=usr;Password=pwd1234;Database=gotogre"));
+            services.AddScoped<GoToGreRepo>();
+            //services.AddSingleton(goToGreContext);
+            //services.AddDbContext<GoToGreContext>();
+   
+
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GoToGre.BackEnd", Version = "v1" });
@@ -35,7 +49,7 @@ namespace GoToGre.BackEnd
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,GoToGreContext goToGreContext)
         {
             if (env.IsDevelopment())
             {

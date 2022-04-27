@@ -22,6 +22,7 @@ namespace GoToGre.FrontEnd.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
         public IActionResult Member()
         {
             return View();
@@ -54,6 +55,10 @@ namespace GoToGre.FrontEnd.Controllers
         }
 
         public IActionResult DeleteProduct()
+=======
+
+        public IActionResult Privacy()
+>>>>>>> d669e536b5039f662012ec3ac072534f16141fa8
         {
             return View();
         }

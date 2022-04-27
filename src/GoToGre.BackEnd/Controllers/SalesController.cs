@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GoToGre.Common.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,27 +15,33 @@ namespace GoToGre.BackEnd.Controllers
     {
         // GET: api/<SalesController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Sale> Get()
         {
-            return new string[] { "value1", "value2" };
+            List<Sale> SaleList = new List<Sale>();
+            return SaleList;
         }
 
         // GET api/<SalesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Sale Get(int id)
         {
-            return "value";
+            return new Sale();
+        }
+        [HttpGet("Member/{id}")]
+        public List<Sale> GetMemberSales(int id)
+        {
+            return new List<Sale>();
         }
 
         // POST api/<SalesController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Sale value)
         {
         }
 
         // PUT api/<SalesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Sale value)
         {
         }
 

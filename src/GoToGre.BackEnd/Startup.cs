@@ -51,10 +51,10 @@ namespace GoToGre.BackEnd
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
+                
             }
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GoToGre.BackEnd v1"));
-
+            app.UseSwagger();
             app.UseHttpsRedirection();
 
             app.UseRouting();

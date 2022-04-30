@@ -1,8 +1,9 @@
 import Head from "next/head";
 import UserTable from '../../app/components/table/UserTable';
 import {useRouter} from "next/router";
-import api from '../../app/config/api';
+import api from '@/config/api';
 import { useEffect, useState } from "react";
+import { Refresh } from "@material-ui/icons";
 function User() {
 
 
@@ -15,17 +16,24 @@ function User() {
    
     // ]
 
-    useEffect(()=>{
+    const userApi = async ()=>{
         api.get('Member')
         .then((res: { data: any; })=>{
-            console.log("Work")
-            console.log(res.data)
            setUserData(res.data);
         })
         .catch(res=>{
             console.log("Error access to API")
         })
+    }
+
+    useEffect(  ()=>{
+         userApi();
     },[])
+
+    async function refresh() {
+        console.log("Refresh");
+          await userApi();
+      } 
     return ( 
         <>
             
@@ -40,7 +48,7 @@ function User() {
             <p className="">Create</p>
             </div>
         
-        <UserTable rows={userData} onRefresh={undefined}/>
+        <UserTable rows={userData} onRefresh={()=> refresh()}/>
         
             
         </div>

@@ -22,6 +22,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { ViewAgenda } from '@material-ui/icons';
 import { Router, useRouter } from 'next/router';
+import api from '@/config/api';
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -215,10 +216,10 @@ export default function EnhancedTable({rows, onRefresh}) {
   };
 
   const router = useRouter();
-  const remove = (product_ID) => {
-    // api.delete(`/Product/${product_ID}`).then((res) => {
-    //     onRefresh();
-    //   });
+  const remove = (id) => {
+    api.delete(`member/${id}`).then((res) => {
+        onRefresh();
+      });
   }
   const handleClick = (event, name) => {
     const selectedIndex = selected.indexOf(name);
@@ -287,16 +288,19 @@ export default function EnhancedTable({rows, onRefresh}) {
                   return (
                     <TableRow
                       hover
+                      className=' cursor-pointer'
                       /**onClick={(event) => handleClick(event, row.name)}**/
+                     
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row.id}
                       selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">
                         
                       </TableCell>
+                      
                       <TableCell component="th" id={labelId} scope="row" padding="none">
                         {row.id}
                       </TableCell>
@@ -304,7 +308,7 @@ export default function EnhancedTable({rows, onRefresh}) {
                       <TableCell align="left">{row.lastName}</TableCell>
                       <TableCell align="left">{row.phoneNumber}</TableCell>
                       <TableCell align="left">
-                          <button class="edit-button" onClick={()=> remove(row.id)}>Edit</button>
+                          <button class="edit-button" onClick={()=> router.push("user/" + row.id)}>View</button>
                          <button class="delete-button" onClick={()=> remove(row.id)}>Delete</button>
                       </TableCell>
                     </TableRow>

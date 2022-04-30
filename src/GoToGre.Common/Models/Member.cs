@@ -18,14 +18,14 @@ namespace GoToGre.Common.Models
             Points = points;
             ImageURL = imageURL;
             LastName = lastName;
-            PhoneNumer = phoneNumber;
+            PhoneNumber = phoneNumber;
             //Sales = new List<Sale>();
         }
         [Key]
         public int Id { get; set; } 
         public string FirstName { get; set; }
         public string LastName  { get; set; }
-        public string PhoneNumer { get; set; }
+        public string PhoneNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string ImageURL { get; set; }
         public int Points { get; set; }

@@ -50,12 +50,13 @@ namespace GoToGre.BackEnd.Controllers
             return _repo.GetProductByID(value.Id);
         }
 
-
+        /*
         // PUT api/<ProductsController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Product value)
         {
         }
+        */
 
         // DELETE api/<ProductsController>/5
         [HttpDelete("{id}")]

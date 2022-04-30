@@ -27,6 +27,11 @@ namespace GoToGre.BackEnd.Repos
             _goToGreContext.SaveChanges();
             return member;
         }
+        public void UpdateMember(Member member)
+        {
+            _goToGreContext.Member.Update(member);
+            _goToGreContext.SaveChanges();
+        }
         public bool DeleteMember(Member member)
         {
             _goToGreContext.Remove(member);
@@ -43,6 +48,12 @@ namespace GoToGre.BackEnd.Repos
         public Product GetProductByID(int id)
         {
             return _goToGreContext.Products.Where(m => m.Id == id).FirstOrDefault();
+        }
+        public void UpdateProduct(Product product)
+        {
+            _goToGreContext.Products.Update(product);
+            _goToGreContext.SaveChanges();
+
         }
         public List<Product> GetProductsByType(string productType)
         {

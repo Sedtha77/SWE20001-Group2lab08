@@ -43,6 +43,13 @@ namespace GoToGre.BackEnd.Controllers
             value.Id = default;
             return _repo.AddProduct(value);
         }
+        [HttpPost("update")]
+        public Product UpdateProduct([FromBody] Product value)
+        {
+            _repo.UpdateProduct(value);
+            return _repo.GetProductByID(value.Id);
+        }
+
 
         // PUT api/<ProductsController>/5
         [HttpPut("{id}")]

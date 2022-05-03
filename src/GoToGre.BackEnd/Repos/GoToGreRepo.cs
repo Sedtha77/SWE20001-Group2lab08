@@ -34,6 +34,11 @@ namespace GoToGre.BackEnd.Repos
             Member deleted = _goToGreContext.Member.Where(x => x.Id == member.Id).FirstOrDefault();
             return (deleted == default);
         }
+        public void UpdateMember(Member member)
+        {
+            _goToGreContext.Member.Update(member);
+            _goToGreContext.SaveChanges();
+        }
         /*
         public List<Procut> getAllMember()
         {
@@ -43,6 +48,12 @@ namespace GoToGre.BackEnd.Repos
         public Product GetProductByID(int id)
         {
             return _goToGreContext.Products.Where(m => m.Id == id).FirstOrDefault();
+        }
+        public void UpdateProduct(Product product)
+        {
+            _goToGreContext.Products.Update(product);
+            _goToGreContext.SaveChanges();
+
         }
         public List<Product> GetProductsByType(string productType)
         {

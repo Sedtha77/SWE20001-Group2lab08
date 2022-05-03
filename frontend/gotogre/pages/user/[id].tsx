@@ -128,7 +128,7 @@ function userDetail() {
            </div>
            <div className=" w-2/4 my-3">
                <h1 className=" font-bold mb-3">Points</h1>
-               <input name="points" onChange={handleInputChange}  className=" border-2 border-primary rounded-lg h-10 w-full px-3" type={"number"} min="0"/>
+               <input name="points" onChange={handleInputChange} value={user.points}  className=" border-2 border-primary rounded-lg h-10 w-full px-3" type={"number"} min="0"/>
            </div>
 
            <div className=" w-2/4 my-3">

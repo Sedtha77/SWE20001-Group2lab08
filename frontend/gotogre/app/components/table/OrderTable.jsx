@@ -51,9 +51,9 @@ function stableSort(array, comparator) {
 
 const headCells = [
   { id: 'id', numeric: true, disablePadding: false, label: 'ID' },
-  { id: 'name', numeric: false, disablePadding: false, label: 'Name' },
-  { id: 'globalPrice', numeric: false, disablePadding: false, label: 'Price' },
-  { id: 'stockAmount', numeric: false, disablePadding: false, label: 'Stock Quantity' }
+  { id: 'saleItems', numeric: false, disablePadding: false, label: 'Sales Items' },
+  { id: 'totalPrice', numeric: false, disablePadding: false, label: 'Total Price' },
+  { id: 'customer', numeric: false, disablePadding: false, label: 'Customer ID' }
   
 ];
 
@@ -300,9 +300,9 @@ export default function EnhancedTable({rows, onRefresh}) {
                       <TableCell component="th" id={labelId} scope="row" padding="none">
                         {row.id}
                       </TableCell>
-                      <TableCell align="left">{row.name}</TableCell>
-                      <TableCell align="left">{row.globalPrice}</TableCell>
-                      <TableCell align="left">{row.stockAmount}</TableCell>
+                      <TableCell align="left">{row.saleItems.length}</TableCell>
+                      <TableCell align="left">{row.totalPrice}</TableCell>
+                      <TableCell align="left">{row.customer.id}</TableCell>
                       <TableCell align="left">
                           <button class="edit-button" onClick={()=> router.push("product/edit/"+ row.id)}>Edit</button>
                          <button class="delete-button" onClick={()=> remove(row.id)}>Delete</button>
@@ -320,7 +320,7 @@ export default function EnhancedTable({rows, onRefresh}) {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[10, 50, 100]}
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}

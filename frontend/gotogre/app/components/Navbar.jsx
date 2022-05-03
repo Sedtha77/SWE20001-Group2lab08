@@ -150,33 +150,26 @@ const menuId = 'primary-search-account-menu';
                 <ListItemText primary="Dashboard" />
               </ListItem>
 
-        <ListItem button key="User" onClick={()=> router.push("/user")} >
+        <ListItem button key="Users" onClick={()=> router.push("/user")} >
                 <ListItemIcon><PeopleIcon /></ListItemIcon>
-                <ListItemText primary="User" />
+                <ListItemText primary="Users" />
               </ListItem>
   
              
   
-        <ListItem button key="Product" onClick={()=> router.push("/product")}>
+        <ListItem button key="Products" onClick={()=> router.push("/product")}>
                 <ListItemIcon><ViewModule/></ListItemIcon>
-                <ListItemText primary="Product" />
+                <ListItemText primary="Products" />
               </ListItem>
   
-        
-         {/* <ListItem button >
+            <ListItem button >
               <ListItemIcon>
                 <BorderColorIcon />
               </ListItemIcon>
-              <ListItemText primary="Project" onClick={()=> router.push("/project")} />
+              <ListItemText primary="Orders" onClick={()=> router.push("/order")} />
             </ListItem>  
 
-        <ListItem button >
-          <ListItemIcon>
-            <SettingsIcon />
-          </ListItemIcon>
-          <ListItemText primary="Service" onClick={()=> router.push("/service")} />
-        </ListItem>   */}
-            
+      
 
         {//currentUser?.userDetail 
         true? 

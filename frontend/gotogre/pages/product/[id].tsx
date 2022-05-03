@@ -1,6 +1,6 @@
 import Head from "next/head";
 import {useRouter} from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { makeClassName } from "@/utils/string";
 import { makeImageCaption } from "@/utils/number";
 import InputFile from "@/components/form/InputFile";
@@ -15,9 +15,9 @@ import api from "@/config/api";
 import IconLoading from "@/icons/IconLoading";
 import ErrorText from "@/components/ErrorText";
 
-function CreateProduct() {
+function ProductDetail() {
     const router = useRouter();
-
+    const {id} = router.query;
     const [product,setProduct] = useState({
         'name':"",
         "imageURL": "",
@@ -31,6 +31,22 @@ function CreateProduct() {
     const [customErrors, setCustomErrors] = useState({});
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+
+    useEffect(()=>{
+      const getUser = async ()=>{
+          api.get(`Products/` + id)
+          .then((res: { data: any; })=>{
+             setProduct({...res.data});
+          })
+          .catch(res=>{
+              console.log("Error access to API")
+          })
+      }
+
+      getUser();
+     
+  },[id]);
+
     const onPhotoSelected = (e: { target: { files: any; }; }) => {
         const selectedImages = e.target.files;
     
@@ -121,11 +137,11 @@ function CreateProduct() {
             
         <div style={{display:"flex", justifyContent:"center"}}>
     <Head>
-      <title>Create Product</title>
+      <title>Product {id}</title>
     </Head>
     <div  style={{ width: '70%'}}>
         
-        <h3 className="header" >Create Product</h3>
+        <h3 className="header" >Product Detail: {id}</h3>
 
         <div className=" w-full border-primary border-2 rounded-lg bg-white py-10" >
         <div className="flex flex-col justify-center items-center">
@@ -240,4 +256,4 @@ function CreateProduct() {
     );
 }
 
-export default CreateProduct;
+export default ProductDetail;

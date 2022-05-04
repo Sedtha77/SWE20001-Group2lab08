@@ -118,7 +118,7 @@ function CreateUser() {
                 onClick={onSubmit}
               disabled={loading}
               type="submit"
-              className="cursor-pointer primary-button flex justify-center items-center rounded-lg"
+              className="cursor-pointer bg-primary primary-button flex justify-center items-center rounded-lg"
             >
               {loading ? <IconLoading /> : <span>Create</span>}
             </button>

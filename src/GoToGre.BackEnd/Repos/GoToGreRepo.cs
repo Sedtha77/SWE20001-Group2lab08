@@ -13,19 +13,37 @@ namespace GoToGre.BackEnd.Repos
         {
             _goToGreContext = goToGreContext;
         }
+        
         public List<Member> getAllMember()
         {
             return _goToGreContext.Member.AsEnumerable().ToList();
         }
+
+        public List<Sale> getAllSales()
+        {
+            return _goToGreContext.Sales.AsEnumerable().ToList();
+        }
         public Member GetMember(int id)
         {
             return _goToGreContext.Member.Where(m => m.Id == id).FirstOrDefault();
+        }
+
+        public Sale GetSale(int id)
+        {
+            return _goToGreContext.Sales.Where(s => s.Id == id).FirstOrDefault();
         }
         public Member AddMember(Member member)
         {
             Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<Member> test =  _goToGreContext.Member.Add(member);
             _goToGreContext.SaveChanges();
             return member;
+        }
+
+        public Sale AddSale(Sale sale)
+        {
+            Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<Sale> add = _goToGreContext.Sales.Add(sale);
+            _goToGreContext.SaveChanges();
+            return sale;
         }
         public bool DeleteMember(Member member)
         {
@@ -34,6 +52,16 @@ namespace GoToGre.BackEnd.Repos
             Member deleted = _goToGreContext.Member.Where(x => x.Id == member.Id).FirstOrDefault();
             return (deleted == default);
         }
+
+        public bool DeleteSale(Sale sale)
+        {
+            _goToGreContext.Remove(sale);
+            _goToGreContext.SaveChanges();
+            Sale deleted = _goToGreContext.Sales.Where(x => x.Id == sale.Id).FirstOrDefault();
+            return (deleted == default);
+        }
+
+
         /*
         public List<Procut> getAllMember()
         {

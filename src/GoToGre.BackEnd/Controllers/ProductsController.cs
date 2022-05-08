@@ -21,16 +21,21 @@ namespace GoToGre.BackEnd.Controllers
         [HttpGet]
         public IEnumerable<Product> Get()
         {
-            return new List<Product>();
+            return _repo.GetAllProducts();
         }
 
         // GET api/<ProductsController>/5
         [HttpGet("{id}")]
         public Product Get(int id)
         {
-            return _repo.GetProductByID(id);
+            var returnProd= _repo.GetProductByID(id);
+            if (returnProd != default)
+            {
+                return _repo.GetProductByID(id);
+            }
+            else return new Product();
         }
-        [HttpGet("{productType}")]
+        [HttpGet("byType/{productType}")]
         public List<Product> GetByType(string productType)
         {
             return _repo.GetProductsByType(productType);
@@ -51,9 +56,11 @@ namespace GoToGre.BackEnd.Controllers
         }
 
         // PUT api/<ProductsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Product value)
+        [HttpPut]
+        public Product Put([FromBody] Product value)
         {
+            _repo.UpdateProduct(value);
+            return _repo.GetProductByID(value.Id);
         }
 
         // DELETE api/<ProductsController>/5

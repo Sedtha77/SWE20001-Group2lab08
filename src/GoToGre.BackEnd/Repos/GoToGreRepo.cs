@@ -45,6 +45,9 @@ namespace GoToGre.BackEnd.Repos
             return _goToGreContext.Member.AsEnumerable().ToList();
         }
         */
+        public List<Product> GetAllProducts() {
+            return _goToGreContext.Products.ToList();
+        }
         public Product GetProductByID(int id)
         {
             return _goToGreContext.Products.Where(m => m.Id == id).FirstOrDefault();

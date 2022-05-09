@@ -33,6 +33,9 @@ namespace GoToGre.FrontEnd.Test
 
 
 
+
+       
+
         [Fact]
         public void Get_Member_By_Id()
         {
@@ -53,6 +56,7 @@ namespace GoToGre.FrontEnd.Test
 
 
 
+
         [Fact]
         public void Add_Member()
         {
@@ -60,6 +64,7 @@ namespace GoToGre.FrontEnd.Test
             var context = new GoToGreContext();
             var repo = new GoToGreRepo(context);
             var controller = new MemberController(repo);
+
             // (int id = 0, string firstName = "",string lastName = "",string phoneNumber = "", int points = 0,string imageURL = "")
             // Arrange
             int testId = 1;

@@ -18,6 +18,8 @@ namespace GoToGre.BackEnd.Controllers
         {
             _repo = goToGreRepo;
         }
+
+        public MemberController() { }
         // GET: api/<MemberController>
         [HttpGet]
         public async Task<IEnumerable<Member>>Get()

@@ -75,5 +75,11 @@ namespace GoToGre.BackEnd.Repos
             Product deleted = _goToGreContext.Products.Where(x => x.Id == product.Id).FirstOrDefault();
             return (deleted == default);
         }
+
+        public List<Sale> getAllSales()
+        {
+            return _goToGreContext.Sales.AsEnumerable().ToList();
+
+        }
     }
 }

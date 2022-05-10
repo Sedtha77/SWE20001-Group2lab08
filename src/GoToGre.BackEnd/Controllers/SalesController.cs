@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GoToGre.Common.Models;
+using GoToGre.BackEnd.Repos;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,11 +14,17 @@ namespace GoToGre.BackEnd.Controllers
     [ApiController]
     public class SalesController : ControllerBase
     {
+
+        private readonly GoToGreRepo _repo;
+        public SalesController(GoToGreRepo goToGreRepo)
+        {
+            _repo = goToGreRepo;
+        }
         // GET: api/<SalesController>
         [HttpGet]
         public IEnumerable<Sale> Get()
         {
-            List<Sale> SaleList = new List<Sale>();
+            List<Sale> SaleList = _repo.getAllSales();
             return SaleList;
         }
 

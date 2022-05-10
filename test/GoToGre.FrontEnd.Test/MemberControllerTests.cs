@@ -11,7 +11,7 @@ namespace GoToGre.FrontEnd.Test
 {
     public class MembersControllerTests
     {
-
+        //Timer tests
 
         [Fact]
         public void Get_All_Members()
@@ -26,7 +26,7 @@ namespace GoToGre.FrontEnd.Test
 
 
             // Assert
-            
+            //Test the list count and measure it to a value
         }
 
 
@@ -65,7 +65,7 @@ namespace GoToGre.FrontEnd.Test
             var repo = new GoToGreRepo(context);
             var controller = new MemberController(repo);
 
-            // (int id = 0, string firstName = "",string lastName = "",string phoneNumber = "", int points = 0,string imageURL = "")
+           
             // Arrange
             int testId = 1;
             var testMember = new Member(1,"Bob","Job", "0435538123",120,"");
@@ -76,6 +76,48 @@ namespace GoToGre.FrontEnd.Test
 
             Assert.Equal("Bob", testGet.FirstName);
         }
+
+
+        [Fact]
+        public void Update_Member()
+        {
+            // Setup
+            var context = new GoToGreContext();
+            var repo = new GoToGreRepo(context);
+            var controller = new MemberController(repo);
+
+
+            // Arrange
+            
+            
+
+            // Assert
+            // Update then check if then get member based on the updated value
+            
+        }
+
+
+
+        [Fact]
+        public void Delete_Member()
+        {
+            // Setup
+            var context = new GoToGreContext();
+            var repo = new GoToGreRepo(context);
+            var controller = new MemberController(repo);
+
+           
+            // Arrange
+            int testId = 1;
+            //Member(1,"Bob","Job", "0435538123",120,"");
+            var testMember = new Member(1, "Bob", "Job", "0435538123", 120, "");
+            bool testDelete = controller.Delete(testId);
+
+            // Assert
+
+            Assert.True(testDelete);
+        }
+
 
 
 

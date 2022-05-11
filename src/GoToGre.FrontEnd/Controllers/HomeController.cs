@@ -17,32 +17,53 @@ namespace GoToGre.FrontEnd.Controllers
         {
             _logger = logger;
         }
+                public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult Member()
+        {
+            return View();
+        }
+        public IActionResult AddMember()
+        {
+            return View();
+        }
+        public IActionResult UpdateMember()
+        {
+            return View();
+        }
 
-        public IActionResult Index()
+        public IActionResult DeleteMember()
         {
             return View();
         }
-        public IActionResult About()
+        public IActionResult Inventory()
+        {
+            return View();
+        }
+        public IActionResult AddProduct()
         {
             return View();
         }
 
-        public IActionResult Store()
+        public IActionResult UpdateProduct()
         {
             return View();
         }
-        public IActionResult Blog()
+
+        public IActionResult DeleteProduct() {
+            return View();
+        }
+
+
+        public IActionResult Privacy()
+
         {
             return View();
         }
-        public IActionResult News()
-        {
-            return View();
-        }
-        public IActionResult Contact()
-        {
-            return View();
-        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

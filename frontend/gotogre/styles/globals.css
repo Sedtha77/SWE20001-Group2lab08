@@ -1,9 +1,13 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Roboto , Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +17,142 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.header{
+  text-align: center;
+  padding-top: 10px;
+  font-weight:bold;
+  font-size:26px;
+}
+
+.main-body{
+  width:600px;
+  border-radius: 5px;
+  background-color: white;
+  border: 2px solid #dadada;
+  box-shadow: 0 2px 3px #dadada;
+  
+}
+
+.input-field{
+  border: 2px solid #dadada;
+  box-shadow: 0 2px 3px #dadada;
+  font-family: Roboto
+}
+
+.input-field input{
+  outline: none;
+}
+
+.fileInput{
+  margin-top: 10px;
+  color:white;
+  height: 50px;
+  width: 200px;
+  background-color: #2a67b1;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputTitle{
+  color: black;
+  padding-bottom: 3px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/*DataTable*/
+.app{
+  margin-top: 15px;
+}
+.containers {
+  font-size: 20px;
+  margin-top: 2rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #283c34;
+  text-align: center;
+}
+
+.MuiToolbar-root{
+  justify-content: space-between;
+}
+
+table {
+  border-spacing: 10px;
+  border: 1 px solid white;
+ }
+ .app,
+ .containers {
+  width: 100%;
+  height: 100%;
+ }
+ .containers {
+  font-size: 28px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #283c34;
+  text-align: center;
+ }
+
+ .action-button{
+   padding: 10px;
+   min-width: 80px;
+   color: white;
+   background-color: #2a67b1;
+   border-radius: 20px;
+ }
+
+ .delete-button{
+  padding: 10px 5px;
+  margin: 2px 5px;
+  min-width: 80px;
+  color: white;
+  background-color: rgb(228, 24, 24);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.edit-button{
+  padding: 10px 5px;
+  margin: 2px 5px;
+  min-width: 80px;
+  color: white;
+  background-color: #2a67b1;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+ .row{
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+ }
+
+ .linkButton {
+  color:white;
+  height: 60px;
+  width: 250px;
+  background-color: #2a67b1;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary-button {
+  width: 150px;
+  height: 40px;
+  background-color: #2a67b1;
+  color: white;
 }

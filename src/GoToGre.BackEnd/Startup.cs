@@ -37,10 +37,7 @@ namespace GoToGre.BackEnd
             opt.UseNpgsql("Host=vm.lance3092.me;Username=usr;Password=pwd1234;Database=gotogre"));
             services.AddScoped<GoToGreRepo>();
             //services.AddSingleton(goToGreContext);
-            //services.AddDbContext<GoToGreContext>();
-   
-
-
+            //services.AddDbContext<GoToGreContext
 
             services.AddSwaggerGen(c =>
             {
@@ -54,10 +51,10 @@ namespace GoToGre.BackEnd
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GoToGre.BackEnd v1"));
+                
             }
-
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GoToGre.BackEnd v1"));
+            app.UseSwagger();
             app.UseHttpsRedirection();
 
             app.UseRouting();

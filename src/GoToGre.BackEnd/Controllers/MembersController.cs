@@ -32,8 +32,14 @@ namespace GoToGre.BackEnd.Controllers
         [HttpGet("{id}")]
         public Member Get(int id)
         {
-            return _repo.GetMember(id);
+            Member returnMem = _repo.GetMember(id);
+            if (returnMem != default)
+            {
+                return _repo.GetMember(id);
+            }
+            else return new Member();
         }
+
 
         // POST api/<MemberController>
         [HttpPost]
@@ -41,12 +47,20 @@ namespace GoToGre.BackEnd.Controllers
         {
             return _repo.AddMember(value);
         }
+        [HttpPost("update")]
+        public Member UpdateUser([FromBody] Member value)
+        {
+            _repo.UpdateMember(value);
+            return _repo.GetMember(value.Id);
+        }
+  
 
         // PUT api/<MemberController>/5
-        [HttpPut("{id}")]
-        public Member Put(int id, [FromBody] Member member)
+        [HttpPut]
+        public Member Put([FromBody] Member member)
         {
-            return new Member();
+            _repo.UpdateMember(member);
+            return _repo.GetMember(member.Id);
         }
 
         // DELETE api/<MemberController>/5

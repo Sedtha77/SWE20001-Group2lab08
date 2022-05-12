@@ -3,15 +3,17 @@ using System;
 using GoToGre.BackEnd.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace GoToGre.BackEnd.Migrations
 {
     [DbContext(typeof(GoToGreContext))]
-    partial class GoToGreContextModelSnapshot : ModelSnapshot
+    [Migration("20220512093726_addImages")]
+    partial class addImages
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,8 +31,8 @@ namespace GoToGre.BackEnd.Migrations
                     b.Property<string>("FileType")
                         .HasColumnType("text");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
+                    b.Property<Guid>("Name")
+                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 

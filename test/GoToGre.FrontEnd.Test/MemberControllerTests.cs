@@ -6,6 +6,7 @@ using GoToGre.BackEnd.Context;
 using Microsoft.EntityFrameworkCore;
 using GoToGre.BackEnd.Repos;
 using GoToGre.Common.Models;
+using System.Collections.Generic;
 
 namespace GoToGre.FrontEnd.Test
 {
@@ -22,10 +23,14 @@ namespace GoToGre.FrontEnd.Test
             var controller = new MemberController(repo);
 
             // Arrange
+            IEnumerable<Member> MemberEnum = controller.Get();
+            List<Member> MemberList = (List<Member>)MemberEnum;
+            
+            // int count = Enum.GetValues(typeof(Member)).Length;
             
 
-
             // Assert
+            Assert.Equal(3, MemberList.Count);
             //Test the list count and measure it to a value
         }
 
@@ -43,15 +48,16 @@ namespace GoToGre.FrontEnd.Test
             var context = new GoToGreContext();
             var repo = new GoToGreRepo(context);
             var controller = new MemberController(repo);
+            int testId = 1;
 
             // Arrange
-            int testId = 9;
+
             Member testGet = controller.Get(testId);
            
 
 
             // Assert
-            Assert.Equal("Keanthai", testGet.FirstName);
+            Assert.Equal("Bob", testGet.FirstName);
         }
 
 
@@ -64,17 +70,26 @@ namespace GoToGre.FrontEnd.Test
             var context = new GoToGreContext();
             var repo = new GoToGreRepo(context);
             var controller = new MemberController(repo);
+            int testId = 2;
 
-           
+
             // Arrange
-            int testId = 1;
-            var testMember = new Member(1,"Bob","Job", "0435538123",120,"");
-            Member testAdd = controller.Post(testMember);
+           
+            
+            var testMember2 = new Member(2, "Mike", "Down", "0435532342", 120, "");
+            var testMember3 = new Member(3, "Even", "Steven", "0435539802", 150, "");
+            var testMember4 = new Member(4, "Own", "Jo", "0435531242", 190, "");
+
+            
+            Member testAdd2 = controller.Post(testMember2);
+            Member testAdd3 = controller.Post(testMember3);
+            Member testAdd4 = controller.Post(testMember4);
+
             Member testGet = controller.Get(testId);
 
             // Assert
 
-            Assert.Equal("Bob", testGet.FirstName);
+            Assert.Equal(120, testGet.Points);
         }
 
 
@@ -85,15 +100,20 @@ namespace GoToGre.FrontEnd.Test
             var context = new GoToGreContext();
             var repo = new GoToGreRepo(context);
             var controller = new MemberController(repo);
+            int testId = 1;
 
 
             // Arrange
-            
-            
+
+            //testMember = new Member(1, "Bob", "Job", "0435538123", 120, "");
+            Member updateMember = new Member(1, "Mohamed", "Hanad", "043553892", 120, "");
+            Member testUpdate = controller.UpdateUser(updateMember);
+            Member testGet = controller.Get(testId);
+
 
             // Assert
-            // Update then check if then get member based on the updated value
-            
+            Assert.Equal("Mohamed", testGet.FirstName);
+
         }
 
 
@@ -108,9 +128,8 @@ namespace GoToGre.FrontEnd.Test
 
            
             // Arrange
-            int testId = 1;
-            //Member(1,"Bob","Job", "0435538123",120,"");
-            var testMember = new Member(1, "Bob", "Job", "0435538123", 120, "");
+            int testId = 4;
+            //Member(4, "Own", "Jo", "0435531242", 190, "");
             bool testDelete = controller.Delete(testId);
 
             // Assert

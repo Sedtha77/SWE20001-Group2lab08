@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using GoToGre.BackEnd.Repos;
 using GoToGre.Common.Models;
 using System.IO;
+using Microsoft.Net.Http.Headers;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace GoToGre.BackEnd.Controllers
@@ -30,12 +31,25 @@ namespace GoToGre.BackEnd.Controllers
         }
 
         // GET api/<ImageController>/5
-        [HttpGet("{id}")]
-        public async Task<Stream> Get(string name)
+        [HttpGet("{name}")]
+        public async Task<FileStreamResult> Get(string name)
         {
+            string[] arr = name.Split(".");
             MemoryStream ms = new MemoryStream();
-            Stream memoryStream = await _storageManager.GetFile(name, ms);
-            return memoryStream;
+            Stream stream = await _storageManager.GetFile(name, ms);
+            stream.Position = 0;
+            if (arr.Last() == "jpg")
+            {
+                return new FileStreamResult(stream, new MediaTypeHeaderValue($"image/jpeg"))
+                {
+                    FileDownloadName = name
+                };
+            }
+            return new FileStreamResult(stream, new MediaTypeHeaderValue($"image/{arr.Last()}"))
+            {
+                FileDownloadName = name
+            };
+
         }
 
         // POST api/<ImageController>

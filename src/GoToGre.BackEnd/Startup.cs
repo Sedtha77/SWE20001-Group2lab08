@@ -38,7 +38,7 @@ namespace GoToGre.BackEnd
             services.AddScoped<GoToGreRepo>();
             //services.AddSingleton(goToGreContext);
             //services.AddDbContext<GoToGreContext
-            StorageManager storageManager = new StorageManager("not part of repo");
+            StorageManager storageManager = new StorageManager("DefaultEndpointsProtocol=https;AccountName=gotogre;AccountKey=VZg5ofSm9ZVnkezyGoytVJWPOIDe+1I5P+bM76VQnhho4KwdSNcHQBePje7ISiiFuW/RY0G5I//Ybt+1oUhIKA==;EndpointSuffix=core.windows.net");
             services.AddSingleton(storageManager);
             services.AddSwaggerGen(c =>
             {

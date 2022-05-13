@@ -18,9 +18,11 @@ namespace GoToGre.BackEnd.Controllers
         {
             _repo = goToGreRepo;
         }
+
+        public MemberController() { }
         // GET: api/<MemberController>
         [HttpGet]
-        public async Task<IEnumerable<Member>>Get()
+        public IEnumerable<Member>Get()
         {
             var memberList = _repo.getAllMember();
             return memberList ;
@@ -68,5 +70,6 @@ namespace GoToGre.BackEnd.Controllers
             Member toDelete = _repo.GetMember(id);
             return _repo.DeleteMember(toDelete);
         }
+
     }
 }

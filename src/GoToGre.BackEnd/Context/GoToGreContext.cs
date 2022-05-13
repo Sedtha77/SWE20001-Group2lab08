@@ -23,6 +23,7 @@ namespace GoToGre.BackEnd.Context
         public DbSet<Product> Products { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<SaleItem> SaleItems { get; set; }
+        public DbSet<Image> Images { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseNpgsql(@"Host=vm.lance3092.me;Username=usr;Password=pwd1234;Database=gotogre");
         protected override void OnModelCreating(ModelBuilder modelBuilder)

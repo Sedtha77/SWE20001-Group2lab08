@@ -38,7 +38,8 @@ namespace GoToGre.BackEnd
             services.AddScoped<GoToGreRepo>();
             //services.AddSingleton(goToGreContext);
             //services.AddDbContext<GoToGreContext
-
+            StorageManager storageManager = new StorageManager("not part of repo");
+            services.AddSingleton(storageManager);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GoToGre.BackEnd", Version = "v1" });

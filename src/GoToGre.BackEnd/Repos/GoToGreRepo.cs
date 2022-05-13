@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using GoToGre.BackEnd.Context;
 using GoToGre.Common.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace GoToGre.BackEnd.Repos
 {
     public class GoToGreRepo
@@ -21,6 +23,7 @@ namespace GoToGre.BackEnd.Repos
         {
             return _goToGreContext.Member.Where(m => m.Id == id).FirstOrDefault();
         }
+
         public Member AddMember(Member member)
         {
             Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<Member> test =  _goToGreContext.Member.Add(member);
@@ -78,8 +81,19 @@ namespace GoToGre.BackEnd.Repos
 
         public List<Sale> getAllSales()
         {
-            return _goToGreContext.Sales.AsEnumerable().ToList();
+            return _goToGreContext.Sales.Include(s => s.SaleItems).ToList();
 
+        }
+        public Image GetImage(int id) {
+            return _goToGreContext.Images.Where(i => i.Id == id).FirstOrDefault();
+        }
+        public void AddImage(Image image) {
+            _goToGreContext.Images.Add(image);
+            _goToGreContext.SaveChanges();
+        }
+        public void DeleteImage(Image image) {
+            _goToGreContext.Images.Remove(image);
+            _goToGreContext.SaveChanges();
         }
     }
 }

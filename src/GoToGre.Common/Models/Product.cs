@@ -14,7 +14,7 @@ namespace GoToGre.Common.Models
         public Product(int id = 0, string name ="", int stockAmmount= 0,double globalPrice= 0.0) {
             Id = id;
             Name = name;
-            StockAmmount = stockAmmount;
+            StockAmount = stockAmmount;
             GlobalPrice = globalPrice;
         }
         [Key]
@@ -22,7 +22,7 @@ namespace GoToGre.Common.Models
         public string Name { get; set; }
         public string ImageURL { get; set; }
         public string ProductType { get; set; }
-        public int StockAmmount { get; set; }
+        public int StockAmount { get; set; }
         public int TargetStock { get; set; }
         public double GlobalPrice { get; set; }
 

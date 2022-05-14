@@ -3,23 +3,31 @@
 }
 @{
     <h1>Add Member</h1>
-    <form action="">
-        <label for="FirstName">First Name:</label><br>
-        <input type="text" id="FirstName" name="FirstName"><br>
+    <form action="/" method="get" id="user_reg_form">
 
-        
-        <label for="LastName">Last Name:</label><br>
-        <input type="text" id="LastName" name="LastName"><br><br>
+        <div id="first_name">
+            <label for="FirstName">First Name:</label><br>
+            <input type="text" name="FirstName" id = "FirstName"required><b><span class="error"></span></b><br>
+        </div>
 
-        <label for="PhoneNumber">Phone Number:</label><br>
-        <input type="text" id="PhoneNumber" name="PhoneNumber"><br><br>
+        <div id="last_name">
+            <label for="LastName">Last Name:</label><br>
+            <input type="text" name="LastName" id="LastName" required> <b><span class="error"></span></b><br><br>
+        </div>
 
-        <label for="Email">Email:</label><br>
-        <input type="text" id="Email" name="Email"><br><br>
+        <div id="phone_num">
+            <label for="PhoneNumber">Phone Number:</label><br>
+            <input type="text" name="PhoneNumber" id="PhoneNumber"><b><span class="error"></span></b><br><br>
+        </div>
 
-        <label for="Adress">Address:</label><br>
-        <input type="text" id="Address" name="Address"><br><br>
-
-        <input type="submit" value="Submit">
+        <div id="email">
+            <label for="Email">Email:</label><br>
+            <input type="email" id="Email" name="Email"><b><span class="error"></span></b><br><br>
+        </div>
+        <div id="address">
+            <label for="Address">Address:</label><br>
+            <input type="text" name="Address" id="Address" required><b><span class="error"></span></b><br><br>
+        </div>
+            <input type="submit" value="Submit">
     </form>
 }

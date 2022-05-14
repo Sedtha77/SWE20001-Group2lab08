@@ -81,8 +81,41 @@ namespace GoToGre.BackEnd.Repos
 
         public List<Sale> getAllSales()
         {
-            return _goToGreContext.Sales.Include(s => s.SaleItems).ToList();
+            return _goToGreContext.Sales.Include(s => s.SaleItems).ThenInclude(si => si.Product).Include(s => s.Customer).ToList();
 
+        }
+        public Sale GetSaleById(int id) {
+            return _goToGreContext.Sales.Where(s => s.Id == id).Include(s => s.SaleItems).ThenInclude(si => si.Product).Include(s=>s.Customer).FirstOrDefault();
+        }
+        public List<Sale> GetSalesByMemberId(int id)
+        {
+            return _goToGreContext.Sales.Where(s => s.Customer.Id == id).Include(s => s.SaleItems).ThenInclude(si => si.Product).ToList();
+        }
+        public void AddSale(Sale sale) {
+            _goToGreContext.Sales.Add(sale);
+            _goToGreContext.SaveChanges();
+        }
+        public void UpdateSale(Sale sale) {
+            _goToGreContext.Sales.Update(sale);
+            _goToGreContext.SaveChanges();
+        }
+        public List<Sale> getSalesBetweenDates(DateTime start, DateTime end) {
+            return _goToGreContext.Sales.Where(s => Between(s.TimeStamp, start, end)).Include(s => s.SaleItems).ThenInclude(si => si.Product).ToList();
+        }
+        public List<SaleItem> getSaleItemsWithProductBetween(Product product, DateTime start, DateTime end) {
+            return _goToGreContext.SaleItems.Where(si => (si.Product == product) && (Between(si.Sale.TimeStamp, start, end))).ToList();
+        }
+        public void DeleteSale(int id)
+        {
+            Sale toRemove = _goToGreContext.Sales.Where(s => s.Id == id).FirstOrDefault();
+            if (toRemove == default) return;
+            _goToGreContext.Sales.Remove(toRemove);
+            _goToGreContext.SaveChanges();
+        }
+        public void DeleteSaleItem(int id) {
+            var saleItem = _goToGreContext.SaleItems.Where(s => s.Id == id).FirstOrDefault();
+            if (saleItem == default) return;
+            _goToGreContext.SaleItems.Remove(saleItem);
         }
         public Image GetImage(int id) {
             return _goToGreContext.Images.Where(i => i.Id == id).FirstOrDefault();
@@ -94,6 +127,10 @@ namespace GoToGre.BackEnd.Repos
         public void DeleteImage(Image image) {
             _goToGreContext.Images.Remove(image);
             _goToGreContext.SaveChanges();
+        }
+        public static bool Between(DateTime input, DateTime date1, DateTime date2)
+        {
+            return (input > date1 && input < date2);
         }
     }
 }

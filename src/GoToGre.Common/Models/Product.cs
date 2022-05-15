@@ -11,9 +11,11 @@ namespace GoToGre.Common.Models
     {
         public Product() { 
         }
-        public Product(int id = 0, string name ="", int stockAmmount= 0,double globalPrice= 0.0) {
+        public Product(int id = 0, string name ="", string imagUrl = "", string productType = "", int stockAmmount= 0,double globalPrice= 0.0) {
             Id = id;
             Name = name;
+            ProductType = productType;
+            ImageURL = imagUrl;
             StockAmount = stockAmmount;
             GlobalPrice = globalPrice;
         }

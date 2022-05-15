@@ -65,16 +65,18 @@ namespace GoToGre.FrontEnd.Test
             var context = new GoToGreContext();
             var repo = new GoToGreRepo(context);
             var controller = new ProductsController(repo);
-            int testId = 1;
+            //int testId = 1;
 
             // Arrange
 
-            //Product testGet = controller.GetByType("a");
+            List<Product> typeList = controller.GetByType("Vegetable");
+
+
 
 
 
             // Assert
-           // Assert.Equal("Apple", testGet.Name);
+            Assert.NotEmpty(typeList);
         }
 
 
@@ -87,25 +89,19 @@ namespace GoToGre.FrontEnd.Test
             var context = new GoToGreContext();
             var repo = new GoToGreRepo(context);
             var controller = new ProductsController(repo);
-            int testId = 2;
+            int testId = 14;
 
 
             // Arrange
-            //public Product(int id = 0, string name ="", int stockAmmount= 0,double globalPrice= 0.0)
-            Product productTest2 = new Product(2, "Banna", 1, 7.8);
-            Product productTest3 = new Product(3, "Pair", 7, 1.3);
-            Product productTest4 = new Product(4, "Grapes", 9, 23.2);
-
-            
-            Product addProductTest2 = controller.Post(productTest2);
-            Product addProductTest3 = controller.Post(productTest3);
-            Product addProductTest4 = controller.Post(productTest4);
+            Product productTest1 = new Product (14, "Tomatoe","", "Vegetable", 4, 8.0);
+            Product productTest2 = new Product(15, "Cucumber", "", "Vegetable", 2, 4.0);
+            Product addProductTest4 = controller.Post(productTest1);
 
             Product testGet = controller.Get(testId);
 
             // Assert
 
-            Assert.Equal("Apple", testGet.Name);
+            Assert.Equal("Tomatoe", testGet.Name);
         }
 
 
@@ -124,7 +120,7 @@ namespace GoToGre.FrontEnd.Test
             // Arrange
 
             //testMember = new Member(1, "Bob", "Job", "0435538123", 120, "");
-            Product productTest2 = new Product(1, "Potatoe", 5, 7.8);
+            Product productTest2 = new Product(1, "Potatoe","","", 5, 7.8);
             Product testUpdate = controller.Put(productTest2);
             Product testGet = controller.Get(testId);
 
@@ -145,13 +141,16 @@ namespace GoToGre.FrontEnd.Test
 
 
             // Arrange
-            int testId = 4;
+            int testId = 12;
             //Product(4, "Grapes", 9, 23.2);
+            
+            controller.Delete(12);
+            controller.Delete(13);
             Product testGet = controller.Get(testId);
 
             // Assert
 
-            Assert.NotEqual(4, testGet.Id);
+            Assert.NotEqual(12, testGet.Id);
         }
     }
 }

@@ -62,7 +62,7 @@ namespace GoToGre.BackEnd.Controllers
 
         // PUT api/<SalesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Sale value)
+        public void Put([FromBody] Sale value)
         {
             _repo.UpdateSale(value);
         }

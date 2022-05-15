@@ -77,6 +77,7 @@ namespace GoToGre.FrontEnd.Test
 
             // Assert
             Assert.NotEmpty(typeList);
+            
         }
 
 

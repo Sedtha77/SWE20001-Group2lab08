@@ -18,11 +18,9 @@ namespace GoToGre.BackEnd.Controllers
         {
             _repo = goToGreRepo;
         }
-
-        public MemberController() { }
         // GET: api/<MemberController>
         [HttpGet]
-        public IEnumerable<Member>Get()
+        public IEnumerable<Member>GetAll()
         {
             var memberList = _repo.getAllMember();
             return memberList ;

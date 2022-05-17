@@ -55,6 +55,20 @@ namespace GoToGre.BackEnd.Controllers
             }
             Sale sale = new Sale();
             sale.Customer = member ;
+            sale.TimeStamp = DateTime.Now;
+            foreach (var item in value.SaleItemRequests) {
+                Product product = _repo.GetProductByID(item.ProductId);
+                if (product != default) {
+                    SaleItem saleItem = new SaleItem()
+                    {
+                        SoldPrice = item.SoldPrice,
+                        Product = product,
+                        Quantity = item.Quantity,
+                        Sale = sale
+                    };
+                    sale.SaleItems.Add(saleItem);
+                }
+            }
             return _repo.AddSale(sale);
             
         }
@@ -91,6 +105,11 @@ namespace GoToGre.BackEnd.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            Sale toDelete = _repo.GetSaleById(id);
+            foreach(SaleItem saleItem in toDelete.SaleItems)
+            {
+                _repo.DeleteSaleItem(saleItem.Id);
+            }
             _repo.DeleteSale(id);
         }
         [HttpGet("SaleItem/GetSaleItemsBetweenDatesWith")]
@@ -111,7 +130,7 @@ namespace GoToGre.BackEnd.Controllers
     }
     public class CreateSaleRequestBody {
         public int MemberID {get;set;}
-        //public List<AddSaleItemRequest> SaleItemBody {get;set;}
+        public List<AddSaleItemRequest> SaleItemRequests {get;set;}
 
     }
     public class AddSaleItemRequest {
@@ -120,6 +139,7 @@ namespace GoToGre.BackEnd.Controllers
         public double SoldPrice {get;set;}
         public int ProductId {get;set;}
         public int MemberId {get;set;}
+        public int Quantity { get; set; }
     }
     public class DateTimeRequestBody
     {

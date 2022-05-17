@@ -13,7 +13,7 @@ function CreateUser() {
          "lastName": "",
          "phone": "",
          "dob": "",
-         "points": 0
+         "points": ""
      });
      
      const [error, setError] = useState("");

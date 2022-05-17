@@ -304,7 +304,7 @@ export default function EnhancedTable({rows, onRefresh}) {
                       <TableCell align="left">{row.totalPrice}</TableCell>
                       <TableCell align="left">{row.customer.id}</TableCell>
                       <TableCell align="left">
-                          <button class="edit-button" onClick={()=> router.push("product/edit/"+ row.id)}>Edit</button>
+                          <button class="edit-button" onClick={()=> router.push("order/"+ row.id)}>View</button>
                          <button class="delete-button" onClick={()=> remove(row.id)}>Delete</button>
                       </TableCell>
                       <TableCell align="left"></TableCell>

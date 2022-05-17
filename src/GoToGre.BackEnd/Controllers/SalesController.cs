@@ -47,16 +47,15 @@ namespace GoToGre.BackEnd.Controllers
 
         // POST api/<SalesController>
         [HttpPost]
-        public void Post([FromBody] Sale value)
+        public Sale Post([FromBody] CreateSaleRequestBody value)
         {
-            Member member = value.Customer;
-            List<SaleItem> sales = value.SaleItems;
-            value.Customer = _repo.GetMember(member.Id);
-            value.SaleItems = null;
-            _repo.AddSale(value);
-            value.SaleItems = sales;
-            _repo.UpdateSale(value);
-            
+            Member member = _repo.GetMember(value.MemberID);
+            if(member == default){
+                return new Sale();
+            }
+            Sale sale = new Sale();
+            sale.Customer = member ;
+            return _repo.AddSale(sale);
             
         }
 
@@ -64,7 +63,28 @@ namespace GoToGre.BackEnd.Controllers
         [HttpPut("{id}")]
         public void Put([FromBody] Sale value)
         {
+  
             _repo.UpdateSale(value);
+
+        }
+        [HttpPost("SaleItem")]
+        public Sale PostSaleItem([FromBody] AddSaleItemRequest value)
+        {
+            Product product = _repo.GetProductByID(value.ProductId);
+            Sale sale = _repo.GetSaleById(value.SaleItemId);
+
+
+            if(product == default || sale == default){
+                return new Sale();
+            }
+            SaleItem saleItem = new SaleItem(){
+                Sale = sale,
+                Product = product,
+                SoldPrice = value.SoldPrice
+            };
+            sale.SaleItems.Add(saleItem);
+            sale.TotalPrice = sale.TotalPrice+saleItem.SoldPrice;
+            return _repo.UpdateSale(sale);
         }
 
         // DELETE api/<SalesController>/5
@@ -88,6 +108,18 @@ namespace GoToGre.BackEnd.Controllers
         }
 
 
+    }
+    public class CreateSaleRequestBody {
+        public int MemberID {get;set;}
+        //public List<AddSaleItemRequest> SaleItemBody {get;set;}
+
+    }
+    public class AddSaleItemRequest {
+
+        public int SaleItemId {get;set;}
+        public double SoldPrice {get;set;}
+        public int ProductId {get;set;}
+        public int MemberId {get;set;}
     }
     public class DateTimeRequestBody
     {

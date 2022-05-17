@@ -91,13 +91,15 @@ namespace GoToGre.BackEnd.Repos
         {
             return _goToGreContext.Sales.Where(s => s.Customer.Id == id).Include(s => s.SaleItems).ThenInclude(si => si.Product).ToList();
         }
-        public void AddSale(Sale sale) {
+        public Sale AddSale(Sale sale) {
             _goToGreContext.Sales.Add(sale);
             _goToGreContext.SaveChanges();
+            return sale;
         }
-        public void UpdateSale(Sale sale) {
+        public Sale UpdateSale(Sale sale) {
             _goToGreContext.Sales.Update(sale);
             _goToGreContext.SaveChanges();
+            return sale;
         }
         public List<Sale> getSalesBetweenDates(DateTime start, DateTime end) {
             return _goToGreContext.Sales.Where(s => Between(s.TimeStamp, start, end)).Include(s => s.SaleItems).ThenInclude(si => si.Product).ToList();

@@ -66,7 +66,21 @@ namespace GoToGre.BackEnd.Controllers
         public bool Delete(int id)
         {
             Member toDelete = _repo.GetMember(id);
-            return _repo.DeleteMember(toDelete);
+            if (toDelete != default)
+            {
+               
+                List<Sale> saleList = _repo.GetSalesByMemberId(toDelete.Id);
+                
+                foreach(Sale sale in saleList)
+                {
+                    sale.Customer = default;
+                    _repo.UpdateSale(sale);
+                }
+                return _repo.DeleteMember(toDelete);
+
+            }
+            return true;
+            
         }
 
     }

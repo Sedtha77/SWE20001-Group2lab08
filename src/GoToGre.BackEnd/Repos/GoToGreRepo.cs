@@ -101,6 +101,9 @@ namespace GoToGre.BackEnd.Repos
             _goToGreContext.SaveChanges();
             return sale;
         }
+        public List<Sale> GetSalesByUserId(int id) {
+            return _goToGreContext.Sales.Where(s => s.Customer.Id == id).ToList();
+        }
         public List<Sale> getSalesBetweenDates(DateTime start, DateTime end) {
             return _goToGreContext.Sales.Where(s => Between(s.TimeStamp, start, end)).Include(s => s.SaleItems).ThenInclude(si => si.Product).ToList();
         }
@@ -130,6 +133,7 @@ namespace GoToGre.BackEnd.Repos
             _goToGreContext.Images.Remove(image);
             _goToGreContext.SaveChanges();
         }
+        
         public static bool Between(DateTime input, DateTime date1, DateTime date2)
         {
             return (input > date1 && input < date2);

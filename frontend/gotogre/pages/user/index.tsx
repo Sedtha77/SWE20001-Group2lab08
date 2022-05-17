@@ -44,7 +44,7 @@ function User() {
         <div  style={{ width: '70%'}}>
             
             <h3 className="header" >Users</h3>
-            <div className=" cursor-pointer primary-button flex justify-center items-center rounded-lg " style={{marginLeft: 'auto', marginRight:0}} onClick={()=> router.push("user/create")} >
+            <div className=" cursor-pointer primary-button flex justify-center items-center rounded-lg my-2 " style={{marginLeft: 'auto', marginRight:0}} onClick={()=> router.push("user/create")} >
             <p className="">Create</p>
             </div>
         

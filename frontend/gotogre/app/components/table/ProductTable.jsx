@@ -22,6 +22,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { ViewAgenda } from '@material-ui/icons';
 import { Router, useRouter } from 'next/router';
+import api from "@/config/api";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -304,7 +305,7 @@ export default function EnhancedTable({rows, onRefresh}) {
                       <TableCell align="left">{row.globalPrice}</TableCell>
                       <TableCell align="left">{row.stockAmount}</TableCell>
                       <TableCell align="left">
-                          <button class="edit-button" onClick={()=> router.push("product/edit/"+ row.id)}>Edit</button>
+                          <button class="edit-button" onClick={()=> router.push("product/"+ row.id)}>View</button>
                          <button class="delete-button" onClick={()=> remove(row.id)}>Delete</button>
                       </TableCell>
                       <TableCell align="left"></TableCell>

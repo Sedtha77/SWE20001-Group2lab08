@@ -10,7 +10,7 @@ function CreateOrder() {
 
     const router = useRouter();
 
-    const [items, setItems] = useState([{ id: "", name: "", price: 0, quantity: 1 }]);
+    const [items, setItems] = useState([{ productId: "", name: "", soldPrice: 0, quantity: 1 }]);
     const [user, setUser] = useState<string>();
     const [userList, setUserList] = useState<any>([]);
     const [productList, setProductList] = useState<any>([]);
@@ -44,9 +44,9 @@ function CreateOrder() {
         
         const selectProduct = productList.find((e: { id: string; }) => e.id ==value);
         let newArr = [...items];
-        newArr[index].id = selectProduct.id;
+        newArr[index].productId = selectProduct.id;
         newArr[index].name = selectProduct.name;
-        newArr[index].price = selectProduct.globalPrice;
+        newArr[index].soldPrice = selectProduct.globalPrice;
 
         setItems(newArr);
     }
@@ -62,7 +62,7 @@ function CreateOrder() {
         let total = 0;
 
         items.map((item)=>{
-            if(item.price !=0 ) total = total + (item.price * item.quantity);
+            if(item.soldPrice !=0 ) total = total + (item.soldPrice * item.quantity);
         })
 
         setTotalPrice(total);
@@ -93,15 +93,12 @@ function CreateOrder() {
         if (validate()) {
             setLoading(true);
 
-            const res = await api.post("member", {
-                // "firstName": user.firstName,
-                // "lastName": user.lastName,
-                // "phoneNumber": user.phone,
-                // "dateOfBirth": user.dob,
-                // "points": user.points
+            const res = await api.post("sales", {
+                "memberID" : user,
+                "saleItemRequests": items
             });
 
-            if (res) router.push("/user")
+            if (res) router.push("/order")
             else setError("Unable to create new user at the moment, please try again later.");
         }
     }
@@ -121,7 +118,7 @@ function CreateOrder() {
 
                             <div className=" w-3/4 my-3 flex flex-row gap-2" >
                                 <p className=" font-bold">Products</p>
-                                <div className=" cursor-pointer" onClick={() => { setItems([...items, { id: "", name: "", price: 0, quantity: 1 }]) }}>
+                                <div className=" cursor-pointer" onClick={() => { setItems([...items, { productId: "", name: "", soldPrice: 0, quantity: 1 }]) }}>
 
                                     <svg id="collapse-plus" xmlns="http://www.w3.org/2000/svg" width="24.66" height="23.768" viewBox="0 0 34.66 33.768">
                                         <path id="Path_109" data-name="Path 109" d="M6.408,0H28.252A6.423,6.423,0,0,1,34.66,6.408V27.36a6.4,6.4,0,0,1-1.881,4.527l-.09.082a6.384,6.384,0,0,1-4.436,1.8H6.408a6.4,6.4,0,0,1-4.527-1.881L1.8,31.8A6.392,6.392,0,0,1,0,27.36V6.405A6.418,6.418,0,0,1,6.408,0Zm9.237,10.813a1.684,1.684,0,0,1,3.368,0V15.2H23.4a1.684,1.684,0,1,1,0,3.368H19.012v4.386a1.684,1.684,0,0,1-3.368,0V18.567H11.256a1.684,1.684,0,0,1,0-3.368h4.386V10.813Zm12.6-7.925H6.408a3.534,3.534,0,0,0-3.52,3.52V27.36a3.514,3.514,0,0,0,.967,2.423l.068.062A3.51,3.51,0,0,0,6.408,30.88H28.252a3.509,3.509,0,0,0,2.423-.97l.059-.065a3.51,3.51,0,0,0,1.035-2.485V6.405a3.529,3.529,0,0,0-3.52-3.517Z" transform="translate(0 0)" fill="#2a67b1" />
@@ -139,7 +136,7 @@ function CreateOrder() {
                                             <div>
                                                 <h1 className=" font-bold mb-3">Product Name</h1>
                                                 <select className="border-2 border-primary rounded-lg h-10 px-3" style={{ width: 200 }}
-                                                    name="productType" placeholder="Choose Product" value={items[index].id} onChange={(e) => { handleProduct(index, e.target.value)  }}>
+                                                    name="productType" placeholder="Choose Product" value={items[index].productId} onChange={(e) => { handleProduct(index, e.target.value)  }}>
                                                         <option hidden selected >Choose product</option>
                                                     {
                                                         
@@ -153,7 +150,7 @@ function CreateOrder() {
 
                                             <div>
                                                 <h1 className=" font-bold mb-3"> Price</h1>
-                                                <input name="Price" value={items[index].price} placeholder="Price" className=" border-2 border-primary rounded-lg h-10 px-3" style={{ width: 100 }} type={"text"} disabled />
+                                                <input name="Price" value={items[index].soldPrice} placeholder="Price" className=" border-2 border-primary rounded-lg h-10 px-3" style={{ width: 100 }} type={"text"} disabled />
                                             </div>
 
                                             <div>
@@ -226,7 +223,7 @@ function CreateOrder() {
                                 onClick={onSubmit}
                                 disabled={loading}
                                 type="submit"
-                                className="cursor-pointer primary-button flex justify-center items-center rounded-lg"
+                                className="cursor-pointer bg-primary primary-button flex justify-center items-center rounded-lg"
                             >
                                 {loading ? <IconLoading /> : <span>Create Order</span>}
                             </button>

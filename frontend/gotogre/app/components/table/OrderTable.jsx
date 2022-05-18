@@ -22,7 +22,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { ViewAgenda } from '@material-ui/icons';
 import { Router, useRouter } from 'next/router';
-
+import api from "@/config/api";
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -216,7 +216,7 @@ export default function EnhancedTable({rows, onRefresh}) {
 
   const router = useRouter();
   const remove = (id) => {
-    api.delete(`/Products/${id}`).then((res) => {
+    api.delete(`/sales/${id}`).then((res) => {
         onRefresh();
       });
   }
@@ -305,7 +305,7 @@ export default function EnhancedTable({rows, onRefresh}) {
                       <TableCell align="left">{row.customer.id}</TableCell>
                       <TableCell align="left">
                           <button class="edit-button" onClick={()=> router.push("order/"+ row.id)}>View</button>
-                         <button class="delete-button" onClick={()=> remove(row.id)}>Delete</button>
+                         
                       </TableCell>
                       <TableCell align="left"></TableCell>
                     </TableRow>

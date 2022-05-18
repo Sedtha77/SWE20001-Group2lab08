@@ -19,15 +19,16 @@ function Order() {
     const headers = [
         {label: "Order ID", key: "id"},
         {label: "Date Time", key: "timeStamp"},
+        {label: "products", key: "products"},
         {label: "Total Price", key: "totalPrice"},
         {label: "Customer ID", key: "customerID"}
     ]
 
     const data: string | Data = [
-        {id: 100, timeStamp: "2022-05-17T16:22:03.139Z", totalPrice: 20, customerID: 4},
-        {id: 100, timeStamp: "2022-05-17T16:22:03.139Z", totalPrice: 20, customerID: 4},
-        {id: 100, timeStamp: "2022-05-17T16:22:03.139Z", totalPrice: 20, customerID: 4},
-        {id: 100, timeStamp: "2022-05-17T16:22:03.139Z", totalPrice: 20, customerID: 4}
+        {id: 100, timeStamp: "2022-05-17T16:22:03.139Z", products: ["Apple", "Banana"] , totalPrice: 20, customerID: 4},
+        {id: 100, timeStamp: "2022-05-17T16:22:03.139Z", products: ["Apple", "Banana"] , totalPrice: 20, customerID: 4},
+        {id: 100, timeStamp: "2022-05-17T16:22:03.139Z", products: ["Apple", "Banana"] , totalPrice: 20, customerID: 4},
+        {id: 100, timeStamp: "2022-05-17T16:22:03.139Z", products: ["Apple", "Banana"] , totalPrice: 20, customerID: 4}
     ];
 
 

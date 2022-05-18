@@ -32,7 +32,7 @@ export default function Layout({children}) {
     return (
         <>
             <Navbar/>
-            <div className={"px-10 pt-5"} style={{marginLeft:  210, backgroundColor:"#F9F9F9", minHeight:"100vh"}}>
+            <div className={"px-10 pt-5"} style={{marginLeft:  168, backgroundColor:"#F9F9F9", minHeight:"100vh"}}>
                  {children}
             </div>  
         </>
